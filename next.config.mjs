@@ -5,6 +5,6 @@ const nextConfig = {
     output: "export",
 }
 
-const withMDX = createMDX({})
+const withMDX = createMDX()
 
 export default withMDX(nextConfig)
