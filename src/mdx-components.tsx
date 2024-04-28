@@ -1,4 +1,4 @@
-import { Code, Heading, Link, ListItem, OrderedList, UnorderedList } from "@chakra-ui/react"
+import { Code, Divider, Heading, Link, ListItem, OrderedList, UnorderedList } from "@chakra-ui/react"
 import type { MDXComponents } from "mdx/types"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
@@ -56,6 +56,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         li: ({ children }) => <ListItem>{children}</ListItem>,
         code: ({ children }) => <Code>{children}</Code>,
         a: (props) => <Link {...props}>{props.children}</Link>,
+        hr: () => <Divider />,
         ...components,
     }
 }
