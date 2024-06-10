@@ -1,62 +1,19 @@
-import { Code, Divider, Heading, Link, ListItem, OrderedList, UnorderedList } from "@chakra-ui/react"
 import type { MDXComponents } from "mdx/types"
+import Link from "next/link"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
-        h1: ({ children }) => (
-            <Heading
-                as="h1"
-                size="4xl"
-            >
-                {children}
-            </Heading>
-        ),
-        h2: ({ children }) => (
-            <Heading
-                as="h2"
-                size="3xl"
-            >
-                {children}
-            </Heading>
-        ),
-        h3: ({ children }) => (
-            <Heading
-                as="h3"
-                size="2xl"
-            >
-                {children}
-            </Heading>
-        ),
-        h4: ({ children }) => (
-            <Heading
-                as="h4"
-                size="xl"
-            >
-                {children}
-            </Heading>
-        ),
-        h5: ({ children }) => (
-            <Heading
-                as="h5"
-                size="lg"
-            >
-                {children}
-            </Heading>
-        ),
-        h6: ({ children }) => (
-            <Heading
-                as="h6"
-                size="md"
-            >
-                {children}
-            </Heading>
-        ),
-        ul: ({ children }) => <UnorderedList>{children}</UnorderedList>,
-        ol: ({ children }) => <OrderedList>{children}</OrderedList>,
-        li: ({ children }) => <ListItem>{children}</ListItem>,
-        code: ({ children }) => <Code>{children}</Code>,
-        a: (props) => <Link {...props}>{props.children}</Link>,
-        hr: () => <Divider />,
+        h1: ({ children }) => <header>{children}</header>,
+        h2: ({ children }) => <header>{children}</header>,
+        h3: ({ children }) => <header>{children}</header>,
+        h4: ({ children }) => <header>{children}</header>,
+        h5: ({ children }) => <header>{children}</header>,
+        h6: ({ children }) => <header>{children}</header>,
+        ul: ({ children }) => <ul>{children}</ul>,
+        ol: ({ children }) => <ol>{children}</ol>,
+        li: ({ children }) => <li>{children}</li>,
+        a: ({ href, children }) => <Link href={href}>{children}</Link>,
+        hr: () => <hr />,
         ...components,
     }
 }

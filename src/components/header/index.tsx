@@ -1,4 +1,4 @@
-import { Link } from "@chakra-ui/react"
+import Link from "next/link"
 
 const Header = () => {
     return (
