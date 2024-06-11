@@ -1,9 +1,12 @@
 import Link from "next/link"
+import styles from "./style.module.scss"
 
 const Header = () => {
     return (
-        <header>
+        <header className={styles.header}>
             <Link href="/">iokira.github.io</Link>
+            <Link href="/about">About</Link>
+            <Link href="/blog">Blog</Link>
         </header>
     )
 }
