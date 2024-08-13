@@ -1,7 +1,7 @@
 import createMDX from "@next/mdx"
 import rehypePrism from "rehype-prism"
 import remarkGfm from "remark-gfm"
-
+import remarkFrontmatter from "remark-frontmatter"
 import 'prismjs/components/prism-lua.js'
 
 const nextConfig = {
@@ -12,7 +12,7 @@ const nextConfig = {
 
 const withMDX = createMDX({
     options: {
-        remarkPlugins: [remarkGfm],
+        remarkPlugins: [remarkGfm, remarkFrontmatter],
         rehypePlugins: [rehypePrism],
     }
 })
