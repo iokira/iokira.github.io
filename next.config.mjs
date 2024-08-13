@@ -1,7 +1,9 @@
 import createMDX from "@next/mdx"
 import rehypePrism from "rehype-prism"
+import rehypeMathjax from "rehype-mathjax"
 import remarkGfm from "remark-gfm"
 import remarkFrontmatter from "remark-frontmatter"
+import remarkMath from "remark-math"
 import 'prismjs/components/prism-bash.js'
 import 'prismjs/components/prism-rust.js'
 import 'prismjs/components/prism-typescript.js'
@@ -15,8 +17,8 @@ const nextConfig = {
 
 const withMDX = createMDX({
     options: {
-        remarkPlugins: [remarkGfm, remarkFrontmatter],
-        rehypePlugins: [rehypePrism],
+        remarkPlugins: [remarkGfm, remarkFrontmatter, remarkMath],
+        rehypePlugins: [rehypePrism, rehypeMathjax],
     }
 })
 
