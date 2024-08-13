@@ -40,6 +40,7 @@ const Slug = ({ post }: { post: Post }) => {
                 <p>更新日: {post.postData.updateDate.toString()}</p>
             )}
             {post.content}
+            <p>タグ: {post.postData.tags.join(", ")}</p>
         </MDXProvider>
     )
 }
