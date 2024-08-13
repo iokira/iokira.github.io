@@ -2,6 +2,9 @@ import createMDX from "@next/mdx"
 import rehypePrism from "rehype-prism"
 import remarkGfm from "remark-gfm"
 import remarkFrontmatter from "remark-frontmatter"
+import 'prismjs/components/prism-bash.js'
+import 'prismjs/components/prism-rust.js'
+import 'prismjs/components/prism-typescript.js'
 import 'prismjs/components/prism-lua.js'
 
 const nextConfig = {
