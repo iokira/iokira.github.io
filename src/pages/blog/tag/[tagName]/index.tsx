@@ -1,6 +1,7 @@
 import Posts from "@/components/parts/posts"
 import usePosts from "@/hooks/usePosts"
 import { GetStaticPaths, GetStaticProps } from "next"
+import { useEffect } from "react"
 
 export const getStaticPaths = (async () => {
     const { getTags } = usePosts()

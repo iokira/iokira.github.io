@@ -21,7 +21,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                 }
             }),
         )
-    }, [order])
+    }, [order, posts])
 
     return (
         <div className={styles.posts}>
