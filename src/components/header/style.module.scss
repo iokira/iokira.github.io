@@ -1,5 +1,33 @@
+@use "@globals" as *;
+
 .header {
     display: flex;
     flex-direction: row;
     gap: 1em;
+
+    @include m('sm') {
+      flex-direction: column;
+    }
+
+    .menuButton {
+      position: absolute;
+      right: 1em;
+      display: none;
+      border: none;
+      text-decoration: none;
+      text-align: center;
+      width: 50px;
+      height: 50px;
+      background-color: $white;
+      font-size: 2em;
+      overflow: hidden;
+
+      &:active {
+        transform: scale(0.9);
+      }
+
+      @include m('sm') {
+        display: block;
+      }
+    }
 }

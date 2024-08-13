@@ -3,11 +3,14 @@
 .main {
     font-size: 16px;
     font-family: Noto Sans, sans-serif;
-
-    width: 50vw;
+    background-color: $white;
+    width: 100dvw;
     margin-inline: auto;
-    @include m('sm') {
-        width: 100%;
+    min-height: 100dvh;
+    padding: 2em;
+
+    a {
+        color: $black;
     }
 
     .component {
