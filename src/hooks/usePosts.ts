@@ -2,7 +2,7 @@ import { readFileSync, readdirSync } from "fs"
 import matter from "gray-matter"
 import path from "path"
 
-const postDir = path.join(process.cwd(), "src/posts")
+const postDir = path.join(process.cwd(), "src/pages/blog/posts")
 
 const usePosts = () => {
     const getPosts = async () => {
