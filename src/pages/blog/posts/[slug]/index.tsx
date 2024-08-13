@@ -1,7 +1,6 @@
 import Tags from "@/components/parts/tags"
 import usePosts from "@/hooks/usePosts"
 import { GetStaticPaths, GetStaticProps } from "next"
-import styles from "./style.module.scss"
 import "prismjs/themes/prism-tomorrow.css"
 import dynamic from "next/dynamic"
 
@@ -44,9 +43,7 @@ const Slug = ({ post }: { post: Post }) => {
                 <p>更新日: {post.postData.updateDate.toString()}</p>
             )}
             <Tags tags={post.postData.tags} />
-            <div className={styles.content}>
-                <Content />
-            </div>
+            <Content />
         </div>
     )
 }
