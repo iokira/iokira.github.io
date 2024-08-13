@@ -29,7 +29,7 @@ const usePosts = () => {
 
     const getPosts = async () => {
         const fileNames = readdirSync(postDir)
-        const postsData = fileNames.map((fileName) => getPost(fileName))
+        const postsData = fileNames.map((fileName) => getPost(fileName.replace(/\.mdx/, "")))
 
         const contents = await Promise.all(postsData)
 
