@@ -20,7 +20,8 @@
         "remark-frontmatter": "5.0.0",
         "remark-gfm": "4.0.0",
         "remark-math": "6.0.0",
-        "remark-toc": "9.0.0"
+        "remark-toc": "9.0.0",
+        "sanitize.css": "13.0.0"
     },
     "devDependencies": {
         "@types/mdx": "2.0.13",
