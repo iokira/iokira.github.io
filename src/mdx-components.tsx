@@ -1,5 +1,5 @@
 import type { MDXComponents } from "mdx/types"
-import Link from "next/link"
+import Link from "@/components/parts/link"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
