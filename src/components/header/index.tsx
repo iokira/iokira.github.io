@@ -1,4 +1,4 @@
-import Link from "next/link"
+import Link from "@/components/parts/link"
 import styles from "./style.module.scss"
 
 const Header = () => {

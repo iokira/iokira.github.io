@@ -1,9 +1,16 @@
 @use "@globals" as *;
 
 .main {
+    font-size: 16px;
+    font-family: Noto Sans, sans-serif;
+
     width: 50vw;
     margin-inline: auto;
     @include m('sm') {
         width: 100%;
+    }
+
+    .component {
+      margin-block: 1em;
     }
 }
