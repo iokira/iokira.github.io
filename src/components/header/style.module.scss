@@ -9,6 +9,16 @@
       flex-direction: column;
     }
 
+    .menu {
+      display: flex;
+      flex-direction: row;
+      gap: 1em;
+
+      @include m('sm') {
+        flex-direction: column;
+      }
+    }
+
     .menuButton {
       position: absolute;
       right: 1em;
