@@ -6,4 +6,8 @@
     @include m('sm') {
         width: 100%;
     }
+
+    .component {
+      margin-block: 1em;
+    }
 }
