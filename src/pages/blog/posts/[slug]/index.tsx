@@ -2,6 +2,7 @@ import Tags from "@/components/parts/tags"
 import usePosts from "@/hooks/usePosts"
 import { MDXProvider } from "@mdx-js/react"
 import { GetStaticPaths, GetStaticProps } from "next"
+import styles from "./style.module.scss"
 
 export const getStaticPaths = (async () => {
     const { getPosts } = usePosts()
@@ -41,7 +42,7 @@ const Slug = ({ post }: { post: Post }) => {
                 <p>更新日: {post.postData.updateDate.toString()}</p>
             )}
             <Tags tags={post.postData.tags} />
-            {post.content}
+            <div className={styles.content}>{post.content}</div>
         </MDXProvider>
     )
 }
