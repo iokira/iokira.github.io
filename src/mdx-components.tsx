@@ -1,5 +1,6 @@
 import type { MDXComponents } from "mdx/types"
 import Link from "@/components/parts/link"
+import "prismjs/themes/prism-tomorrow.css"
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
     return {
