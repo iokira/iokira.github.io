@@ -1,7 +1,5 @@
 type Post = {
     id: string
-    data: {
-        [key: string]: string
-    }
+    postData: PostData
     content: string
 }

@@ -15,9 +15,17 @@ const usePosts = () => {
 
             const { data, content } = matter(fileContents)
 
+            const postData: PostData = {
+                title: data.title as string,
+                description: data.description as string,
+                tags: data.tags as string[],
+                createDate: data.createDate as Date,
+                updateDate: data.updateDate as Date,
+            }
+
             return {
                 id,
-                data,
+                postData,
                 content,
             }
         })
