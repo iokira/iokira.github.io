@@ -1,6 +1,12 @@
 @use "@globals" as *;
 
 .posts {
+    .select {
+        width: 100px;
+        height: 30px;
+        font-size: 1em;
+    }
+
     display: flex;
     flex-direction: column;
     gap: 2em;
