@@ -10,7 +10,7 @@ const Post = ({ post }: { post: Post }) => {
         <article className={styles.post}>
             <p className={styles.date}>{date}</p>
             <div className={styles.title}>
-                <Link href={"blog/posts/" + post.id}>{post.postData.title}</Link>
+                <Link href={"blog/" + post.id}>{post.postData.title}</Link>
             </div>
             <p className={styles.description}>{post.postData.description}</p>
         </article>
