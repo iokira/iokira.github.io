@@ -15,9 +15,9 @@ const Posts = ({ posts }: { posts: Post[] }) => {
         setSortedPosts(
             posts.slice().sort((a, b) => {
                 if (order === Order.Asc) {
-                    return a.postData.createDate < b.postData.createDate ? -1 : 1
+                    return a.postData.updateDate < b.postData.updateDate ? -1 : 1
                 } else {
-                    return a.postData.createDate > b.postData.createDate ? -1 : 1
+                    return a.postData.updateDate > b.postData.updateDate ? -1 : 1
                 }
             }),
         )
