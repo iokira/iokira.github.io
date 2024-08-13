@@ -1,0 +1,7 @@
+@use "@globals" as *;
+
+.post {
+    border: 1px solid $black;
+    border-radius: 10px;
+    padding: 6px;
+}
