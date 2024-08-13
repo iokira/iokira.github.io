@@ -8,7 +8,7 @@ const Header = () => {
         <header className={styles.header}>
             <Link href="/">iokira.github.io</Link>
             {menuOpen && (
-                <div>
+                <div className={styles.menu}>
                     <Link href="/about">About</Link>
                     <Link href="/blog">Blog</Link>
                 </div>
