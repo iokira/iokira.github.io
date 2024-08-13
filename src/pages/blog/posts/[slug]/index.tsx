@@ -1,8 +1,9 @@
 import Tags from "@/components/parts/tags"
 import usePosts from "@/hooks/usePosts"
-import { MDXProvider } from "@mdx-js/react"
 import { GetStaticPaths, GetStaticProps } from "next"
 import styles from "./style.module.scss"
+import "prismjs/themes/prism-tomorrow.css"
+import dynamic from "next/dynamic"
 
 export const getStaticPaths = (async () => {
     const { getPosts } = usePosts()
@@ -34,16 +35,19 @@ export const getStaticProps = (async (context) => {
 }) satisfies GetStaticProps<{ post: Post }>
 
 const Slug = ({ post }: { post: Post }) => {
+    const Content = dynamic(() => import(`@/posts/${post.id}.mdx`))
     return (
-        <MDXProvider>
+        <div>
             <h1>{post.postData.title}</h1>
             <p>投稿日: {post.postData.createDate.toString()}</p>
             {post.postData.updateDate != post.postData.createDate && (
                 <p>更新日: {post.postData.updateDate.toString()}</p>
             )}
             <Tags tags={post.postData.tags} />
-            <div className={styles.content}>{post.content}</div>
-        </MDXProvider>
+            <div className={styles.content}>
+                <Content />
+            </div>
+        </div>
     )
 }
 
