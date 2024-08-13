@@ -1,3 +1,4 @@
+import Tags from "@/components/parts/tags"
 import usePosts from "@/hooks/usePosts"
 import { MDXProvider } from "@mdx-js/react"
 import { GetStaticPaths, GetStaticProps } from "next"
@@ -39,8 +40,8 @@ const Slug = ({ post }: { post: Post }) => {
             {post.postData.updateDate != post.postData.createDate && (
                 <p>更新日: {post.postData.updateDate.toString()}</p>
             )}
+            <Tags tags={post.postData.tags} />
             {post.content}
-            <p>タグ: {post.postData.tags.join(", ")}</p>
         </MDXProvider>
     )
 }
