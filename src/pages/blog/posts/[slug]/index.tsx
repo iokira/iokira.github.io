@@ -3,6 +3,7 @@ import usePosts from "@/hooks/usePosts"
 import { GetStaticPaths, GetStaticProps } from "next"
 import "prismjs/themes/prism-tomorrow.css"
 import dynamic from "next/dynamic"
+import styles from "./style.module.scss"
 
 export const getStaticPaths = (async () => {
     const { getPosts } = usePosts()
@@ -36,7 +37,7 @@ export const getStaticProps = (async (context) => {
 const Slug = ({ post }: { post: Post }) => {
     const Content = dynamic(() => import(`@/posts/${post.id}.mdx`))
     return (
-        <div>
+        <div className={styles.postContent}>
             <h1>{post.postData.title}</h1>
             <p>投稿日: {post.postData.createDate.toString()}</p>
             {post.postData.updateDate != post.postData.createDate && (

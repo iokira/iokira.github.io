@@ -23,7 +23,7 @@ const withMDX = createMDX({
             remarkGfm, 
             remarkFrontmatter, 
             remarkMath, 
-            [remarkToc, { maxDepth: 3, heading: "目次" }]
+            [remarkToc, { maxDepth: 3, heading: "目次", prefix: "content-" }]
         ],
         rehypePlugins: [rehypePrism, rehypeMathjax, rehypeSlug],
     }
