@@ -18,6 +18,7 @@ const usePosts = () => {
             tags: data.tags as string[],
             createDate: data.createDate as Date,
             updateDate: data.updateDate as Date,
+            draft: data.draft as boolean,
         }
 
         return {
@@ -31,7 +32,7 @@ const usePosts = () => {
         const fileNames = readdirSync(postDir)
         const postsData = fileNames.map((fileName) => getPost(fileName.replace(/\.mdx/, "")))
 
-        const contents = await Promise.all(postsData)
+        const contents = (await Promise.all(postsData)).filter((post) => !post.postData.draft)
 
         if (tag) {
             return contents.filter((post) => post.postData.tags.includes(tag))

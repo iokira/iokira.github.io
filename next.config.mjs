@@ -8,6 +8,7 @@ import 'prismjs/components/prism-bash.js'
 import 'prismjs/components/prism-rust.js'
 import 'prismjs/components/prism-typescript.js'
 import 'prismjs/components/prism-lua.js'
+import 'prismjs/components/prism-markdown.js'
 import rehypeSlug from "rehype-slug"
 import remarkToc from "remark-toc"
 
@@ -15,6 +16,9 @@ const nextConfig = {
     pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
     output: "export",
     reactStrictMode: true,
+    images: {
+        unoptimized: true,
+    }
 }
 
 const withMDX = createMDX({

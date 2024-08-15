@@ -4,4 +4,5 @@ type PostData = {
     tags: string[]
     createDate: Date
     updateDate: Date
+    draft: boolean
 }
