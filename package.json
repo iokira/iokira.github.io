@@ -43,5 +43,9 @@
             "eslint --fix",
             "prettier --write"
         ]
+    },
+    "volta": {
+        "node": "20.16.0",
+        "yarn": "4.4.0"
     }
 }
