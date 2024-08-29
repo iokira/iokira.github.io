@@ -7,9 +7,9 @@ import "sanitize.css"
 
 const App = ({ Component, pageProps }: AppProps) => {
     return (
-        <main className={style.main}>
+        <main className={style["main"]}>
             <Header />
-            <div className={style.component}>
+            <div className={style["component"]}>
                 <Component {...pageProps} />
             </div>
             <Footer />

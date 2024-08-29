@@ -9,7 +9,7 @@ type LinkProps = {
 
 const Link: React.FC<LinkProps> = ({ href, children, target }) => {
     return (
-        <div className={style.link}>
+        <div className={style["link"]}>
             <NextLink
                 href={href}
                 target={target}

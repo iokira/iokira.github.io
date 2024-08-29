@@ -3,7 +3,7 @@ import style from "./index.module.scss"
 
 const Tags = ({ tags }: { tags: string[] }) => {
     return (
-        <div className={style.tags}>
+        <div className={style["tags"]}>
             {tags.map((tag) => (
                 <Tag
                     key={tag}

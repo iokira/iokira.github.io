@@ -8,12 +8,12 @@ const Post = ({ post }: { post: Post }) => {
             ? post.postData.updateDate + " (edited)"
             : post.postData.createDate.toString()
     return (
-        <article className={style.post}>
-            <p className={style.date}>{date}</p>
-            <div className={style.title}>
+        <article className={style["post"]}>
+            <p className={style["date"]}>{date}</p>
+            <div className={style["title"]}>
                 <Link href={"/blog/posts/" + post.id}>{post.postData.title}</Link>
             </div>
-            <p className={style.description}>{post.postData.description}</p>
+            <p className={style["description"]}>{post.postData.description}</p>
             <Tags tags={post.postData.tags} />
         </article>
     )

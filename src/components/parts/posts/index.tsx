@@ -24,9 +24,9 @@ const Posts = ({ posts }: { posts: Post[] }) => {
     }, [order, posts])
 
     return (
-        <div className={style.posts}>
+        <div className={style["posts"]}>
             <select
-                className={style.select}
+                className={style["select"]}
                 name="order"
                 value={order}
                 onChange={(e) => setOrder(Number(e.target.value))}
