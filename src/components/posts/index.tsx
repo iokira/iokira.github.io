@@ -1,4 +1,4 @@
-import Post from "@/components/parts/post"
+import Post from "@/components/post"
 import style from "./index.module.scss"
 import { useEffect, useState } from "react"
 

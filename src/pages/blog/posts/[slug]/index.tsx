@@ -1,4 +1,4 @@
-import Tags from "@/components/parts/tags"
+import Tags from "@/components/tags"
 import usePosts from "@/hooks/usePosts"
 import { GetStaticPaths, GetStaticProps } from "next"
 import "prismjs/themes/prism-tomorrow.css"

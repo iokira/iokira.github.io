@@ -1,4 +1,4 @@
-import Tag from "@/components/parts/tag"
+import Tag from "@/components/tag"
 import style from "./index.module.scss"
 
 const Tags = ({ tags }: { tags: string[] }) => {

@@ -1,4 +1,4 @@
-import Link from "@/components/parts/link"
+import Link from "@/components/link"
 import style from "./index.module.scss"
 
 const Tag = ({ name }: { name: string }) => {
