@@ -36,12 +36,23 @@
         "lint-staged": "15.2.2",
         "prettier": "3.2.5",
         "sass": "1.77.4",
+        "stylelint": "16.9.0",
+        "stylelint-config-recess-order": "5.1.0",
+        "stylelint-config-standard": "36.0.1",
+        "stylelint-config-standard-scss": "13.1.0",
         "typescript": "5.4.5"
     },
     "lint-staged": {
         "*.{js,jsx,ts,tsx,md,mdx}": [
             "eslint --fix",
             "prettier --write"
+        ],
+        "*.{css,scss}": [
+            "stylelint --fix"
         ]
+    },
+    "volta": {
+        "node": "20.16.0",
+        "yarn": "4.4.0"
     }
 }

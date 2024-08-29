@@ -1,9 +1,9 @@
-import Tag from "@/components/parts/tag"
-import styles from "./style.module.scss"
+import Tag from "@/components/tag"
+import style from "./index.module.scss"
 
 const Tags = ({ tags }: { tags: string[] }) => {
     return (
-        <div className={styles.tags}>
+        <div className={style["tags"]}>
             {tags.map((tag) => (
                 <Tag
                     key={tag}

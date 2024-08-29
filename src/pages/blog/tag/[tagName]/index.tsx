@@ -1,4 +1,4 @@
-import Posts from "@/components/parts/posts"
+import Posts from "@/components/posts"
 import usePosts from "@/hooks/usePosts"
 import { GetStaticPaths, GetStaticProps } from "next"
 import { useEffect } from "react"

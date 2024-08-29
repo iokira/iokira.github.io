@@ -1,0 +1,124 @@
+---
+title: Next.js + MDXでSSGなブログを作ろう！（下書き）
+description: マークダウンの拡張であるMDXで記事が書けるブログシステムをNext.jsのPage routerで作成しよう！
+tags: [tech]
+createDate: 2024/08/14
+updateDate: 2024/08/14
+draft: true
+---
+
+## 概要
+
+タイトルにある通りですが、MDXで記事が書けるブログシステムをNext.jsで作成します。
+
+筆者の慣れの関係でTypescript + Page routerで作成します。
+
+また、ある程度Next.jsに慣れている読者を想定しています。
+
+MDXについては[こちら](https://mdxjs.com/)を参照してください。
+
+## 目次
+
+## 使用する環境
+
+## Next.jsの準備
+
+[Node.js 18.18以上](https://nodejs.org/en)が使用できる環境を前提としています。
+
+まずは土台となるNext.jsのプロジェクトを作成します。詳しく
+は[こちら](https://nextjs.org/docs/getting-started/installation)
+
+今回実行した環境はこちら
+
+```bash
+$ node -v
+v22.6.0
+
+$ npx -v
+v10.8.2
+```
+
+最初にcreate-next-appを使用してプロジェクトの作成を行います。
+
+```bash
+npx create-next-app@latest
+```
+
+今回は以下のように答えました。必要に応じてESLintを入れたりTailwindを使ったりしてもいいと思います。`src/`ディレクトリと
+App Routerはお好みで。
+
+```bash
+What is your project named? … demo-app
+Would you like to use TypeScript? … Yes
+Would you like to use ESLint? … No
+Would you like to use Tailwind CSS? … No
+Would you like to use `src/` directory? … Yes
+Would you like to use App Router? (recommended) … No
+Would you like to customize the default import alias (@/*)? … No
+```
+
+プロジェクトの作成がうまく行った場合、以下のようなファイルが作成されていると思います。
+
+```bash
+$ cd demo-app
+$ ls
+README.md          next.config.mjs    package-lock.json  public/            tsconfig.json
+next-env.d.ts      node_modules/      package.json       src/
+```
+
+それでは起動できるか試してみましょう。
+
+```bash
+$ npm run dev
+
+> demo-app@0.1.0 dev
+> next dev
+
+  ▲ Next.js 14.2.5
+  - Local:        http://localhost:3000
+
+ ✓ Starting...
+ ✓ Ready in 2s
+ ○ Compiling / ...
+ ✓ Compiled / in 1093ms (295 modules)
+ GET / 200 in 1169ms
+```
+
+起動できるとlocalhost:3000でNext.jsのサンプルサイトが見れると思います。
+
+不要なファイルを削除します。
+
+```bash
+$ rm -rf public/ src/pages/api src/styles/Home.module.css
+```
+
+また、トップページとスタイルシートの中身も消しておきます。
+
+```bash
+$ echo "" > src/pages/index.tsx
+$ echo "" > src/styles/globals.css
+```
+
+簡単にトップページの内容を書き換えておきます。
+
+```ts
+const Home = () => {
+    return (
+        <div>Blog</div>
+    )
+}
+
+export default Home
+```
+
+## MDXの利用
+
+[こちら](https://nextjs.org/docs/pages/building-your-application/configuring/mdx)の通りに環境を作っていきます。
+
+```bash
+npm install @next/mdx @mdx-js/loader @mdx-js/react @types/mdx
+```
+
+## GFMの利用
+
+## Frontmatterの利用

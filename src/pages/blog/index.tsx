@@ -1,4 +1,4 @@
-import Posts from "@/components/parts/posts"
+import Posts from "@/components/posts"
 import usePosts from "@/hooks/usePosts"
 import { GetStaticProps, InferGetStaticPropsType } from "next"
 

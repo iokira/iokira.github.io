@@ -1,14 +1,15 @@
+@use "sass:map";
+
 $black: #000;
 $gray: #666;
 $white: #fff;
-
 $breakpoints: (
     'sm': 600px,
     'md': 900px
 );
 
 @mixin m($size) {
-    @media screen and (max-width: #{map-get($breakpoints, $size)}) {
+    @media screen and (max-width: #{map.get($breakpoints, $size)}) {
         @content;
     }
 }

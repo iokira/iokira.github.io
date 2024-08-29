@@ -1,9 +1,9 @@
-import Link from "@/components/parts/link"
-import styles from "./style.module.scss"
+import Link from "@/components/link"
+import style from "./index.module.scss"
 
 const Tag = ({ name }: { name: string }) => {
     return (
-        <div className={styles.tag}>
+        <div className={style["tag"]}>
             <Link href={"/blog/tag/" + name}>{name}</Link>
         </div>
     )

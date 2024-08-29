@@ -1,13 +1,15 @@
 @use "@globals" as *;
 
 .main {
-    font-size: 16px;
-    font-family: Noto Sans, sans-serif;
-    background-color: $white;
+    display: flex;
+    flex-direction: column;
     width: 100dvw;
-    margin-inline: auto;
     min-height: 100dvh;
     padding: 2em;
+    margin-inline: auto;
+    font-family: "Noto Sans", sans-serif;
+    font-size: 16px;
+    background-color: $white;
 
     a {
         color: $black;

@@ -1,5 +1,5 @@
-import Post from "@/components/parts/post"
-import styles from "./style.module.scss"
+import Post from "@/components/post"
+import style from "./index.module.scss"
 import { useEffect, useState } from "react"
 
 enum Order {
@@ -24,9 +24,9 @@ const Posts = ({ posts }: { posts: Post[] }) => {
     }, [order, posts])
 
     return (
-        <div className={styles.posts}>
+        <div className={style["posts"]}>
             <select
-                className={styles.select}
+                className={style["select"]}
                 name="order"
                 value={order}
                 onChange={(e) => setOrder(Number(e.target.value))}
@@ -40,6 +40,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                     post={post}
                 />
             ))}
+            {sortedPosts.length === 0 && <p>No posts found</p>}
         </div>
     )
 }
