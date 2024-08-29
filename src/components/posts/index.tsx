@@ -40,6 +40,7 @@ const Posts = ({ posts }: { posts: Post[] }) => {
                     post={post}
                 />
             ))}
+            {sortedPosts.length === 0 && <p>No posts found</p>}
         </div>
     )
 }
