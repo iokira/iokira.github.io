@@ -44,6 +44,9 @@
         "*.{js,jsx,ts,tsx,md,mdx}": [
             "eslint --fix",
             "prettier --write"
+        ],
+        "*.{css,scss}": [
+            "stylelint --fix"
         ]
     },
     "volta": {
