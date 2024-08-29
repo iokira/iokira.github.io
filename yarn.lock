@@ -6200,9 +6200,10 @@ __metadata:
     sanitize.css: "npm:13.0.0"
     sass: "npm:1.77.4"
     stylelint: "npm:16.9.0"
+    stylelint-config-prettier: "npm:^9.0.5"
     stylelint-config-standard: "npm:36.0.1"
     stylelint-config-standard-scss: "npm:13.1.0"
-    stylelint-order: "npm:^6.0.4"
+    stylelint-order: "npm:6.0.4"
     typescript: "npm:5.4.5"
   languageName: unknown
   linkType: soft
@@ -6732,6 +6733,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"stylelint-config-prettier@npm:^9.0.5":
+  version: 9.0.5
+  resolution: "stylelint-config-prettier@npm:9.0.5"
+  peerDependencies:
+    stylelint: ">= 11.x < 15"
+  bin:
+    stylelint-config-prettier: bin/check.js
+    stylelint-config-prettier-check: bin/check.js
+  checksum: 10c0/4fb049b3ea00a9fff009b83583d42b7c76978d1befe8e3132ab2722deb25601931b076902a2fab4d4570ece03ec0cb8ba062cc59a9440251a32eb71d1b29803c
+  languageName: node
+  linkType: hard
+
 "stylelint-config-recommended-scss@npm:^14.0.0":
   version: 14.1.0
   resolution: "stylelint-config-recommended-scss@npm:14.1.0"
@@ -6785,7 +6798,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"stylelint-order@npm:^6.0.4":
+"stylelint-order@npm:6.0.4":
   version: 6.0.4
   resolution: "stylelint-order@npm:6.0.4"
   dependencies:
