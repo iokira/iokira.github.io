@@ -1,5 +1,5 @@
 import NextLink from "next/link"
-import styles from "./style.module.scss"
+import style from "./index.module.scss"
 import { ReactNode } from "react"
 
 type LinkProps = {
@@ -9,7 +9,7 @@ type LinkProps = {
 
 const Link: React.FC<LinkProps> = ({ href, children, target }) => {
     return (
-        <div className={styles.link}>
+        <div className={style.link}>
             <NextLink
                 href={href}
                 target={target}

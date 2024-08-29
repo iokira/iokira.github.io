@@ -1,21 +1,21 @@
 import Link from "@/components/parts/link"
-import styles from "./style.module.scss"
+import style from "./index.module.scss"
 import { useState } from "react"
 
 const Header = () => {
     const [menuOpen, setMenuOpen] = useState(true)
     return (
-        <header className={styles.header}>
+        <header className={style.header}>
             <Link href="/">iokira.github.io</Link>
             {menuOpen && (
-                <div className={styles.menu}>
+                <div className={style.menu}>
                     <Link href="/about">About</Link>
                     <Link href="/blog">Blog</Link>
                 </div>
             )}
             <button
                 onClick={() => setMenuOpen(!menuOpen)}
-                className={styles.menuButton}
+                className={style.menuButton}
             >
                 🍔
             </button>
