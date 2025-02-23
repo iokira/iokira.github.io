@@ -3,7 +3,7 @@ import style from "./index.module.scss"
 import { useState } from "react"
 
 const Header = () => {
-    const [menuOpen, setMenuOpen] = useState(true)
+    const [menuOpen, setMenuOpen] = useState(false)
     return (
         <header className={style["header"]}>
             <Link href="/">iokira.github.io</Link>
