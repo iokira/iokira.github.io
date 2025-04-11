@@ -1,10 +1,8 @@
 ---
-console.log("launch astro");
+import BaseLayout from '@layouts/BaseLayout.astro';
+const pageTitle = "iokira - home page";
 ---
-
-<html>
-    <body>
-        <h1>iokira's homepage</h1>
-        <p>This is iokira's homepage.</p>
-    </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <h1>{pageTitle}</h1>
+    <h2>吉良 伊織 (Kira Iori)</h2>
+</BaseLayout>

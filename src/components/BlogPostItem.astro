@@ -1,0 +1,28 @@
+---
+const { post } = Astro.props;
+---
+<a href={post.url}>{post.frontmatter.title}</a>
+<ol class="blogPostItemTags">
+    {post.frontmatter.tags.map((tag) => <li class="blogPostItemTag">
+        <a href={`/tags/${tag}`}>{tag}</a>
+    </li>)}
+</ol>
+<style>
+    .blogPostItemTags {
+        list-style-type: none;
+        padding-inline-start: 0;
+    }
+
+    .blogPostItemTag {
+        display: inline-block;
+    }
+
+    .blogPostItemTag::after {
+        display: inline-block;
+        content: ",";
+    }
+
+    .blogPostItemTag:last-child::after {
+        display: none;
+    }
+</style>

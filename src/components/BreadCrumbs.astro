@@ -1,0 +1,30 @@
+---
+const { crumbs, topic } = Astro.props;
+---
+<nav class="crumbs">
+    <ol>
+        {crumbs.map((crumb) =>
+        <li class="crumb"><a href={crumb.url}>{crumb.title}</a></li>)}
+        <li class="crumb">{topic}</li>
+    </ol>
+</nav>
+<style>
+    .crumbs {
+        border-bottom: 1px solid black;
+    }
+
+    .crumbs ol {
+        list-style-type: none;
+        padding-inline-start: 0;
+    }
+
+    .crumb {
+        display: inline-block;
+    }
+
+    .crumb a::after {
+        display: inline-block;
+        content: ">";
+        padding: 0 0.3rem;
+    }
+</style>
