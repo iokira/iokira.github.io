@@ -1,5 +1,10 @@
 ---
 const pageTitle = "僕について";
+
+const accounts = [
+    { link: "https://github.com/iokira", name: "GitHub" },
+    { link: "https://x.com/iokira_jp", name: "X (Twitter)"}
+];
 ---
 <html lang="ja">
     <head>
@@ -17,8 +22,7 @@ const pageTitle = "僕について";
         <p>プログラマです。コーヒーが好き。</p>
         <h2>各種 SNS アカウント</h2>
         <ul>
-            <li><a href="https://github.com/iokira">GitHub</a></li>
-            <li><a href="https://x.com/iokira_jp">X (Twitter)</a></li>
+            {accounts.map((account) => <li><a href={account.link} target="_blank">{account.name}</a></li>)}
         </ul>
         <h2>メールアドレス</h2>
         <p>dotfiles に .gitconfig を載せているので、そちらをご参照ください</p>
