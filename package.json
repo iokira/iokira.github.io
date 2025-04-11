@@ -1,11 +1,4 @@
 {
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint",
-        "prepare": "husky install"
-    },
     "volta": {
         "node": "20.16.0",
         "yarn": "4.4.0"
