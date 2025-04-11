@@ -6,12 +6,21 @@
 <style>
     .nav-links {
         width: 100%;
-        display: block;
+        display: flex;
+        gap: 1rem;
+        flex-direction: row;
     }
 
     .nav-links a {
+        display: block;
         text-decoration: none;
         color: black;
         font-size: 1.2rem;
+    }
+
+    @media (max-width: 600px) {
+        .nav-links {
+            gap: 0.5rem;
+        }
     }
 </style>
