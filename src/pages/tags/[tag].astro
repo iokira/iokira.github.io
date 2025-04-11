@@ -19,7 +19,7 @@ const { tag } = Astro.params;
 const { posts } = Astro.props;
 ---
 <BaseLayout pageTitle={tag}>
-    <BreadCrumbs crumbs={[{url: "/tags", title: "タグ"}]} topic={tag} />
+    <BreadCrumbs crumbs={[{url: "/blog", title: "ブログ"}, {url: "/tags", title: "タグ一覧"}]} topic={tag} />
     <h1>{tag}のタグが付いた記事</h1>
     <ul>
         {posts.map((post) =>
