@@ -1,33 +1,19 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "僕について";
 
 const accounts = [
-    { link: "https://github.com/iokira", name: "GitHub" },
-    { link: "https://x.com/iokira_jp", name: "X (Twitter)"}
+{ link: "https://github.com/iokira", name: "GitHub" },
+{ link: "https://x.com/iokira_jp", name: "X (Twitter)"}
 ];
 ---
-<html lang="ja">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} >
-        <title>{pageTitle}</title>
-    </head>
-    <body>
-        <Header />
-        <h1>{pageTitle}</h1>
-        <h2>iokira って誰？<h2>
-        <p>プログラマです。コーヒーが好き。</p>
-        <h2>各種 SNS アカウント</h2>
-        <ul>
-            {accounts.map((account) => <li><a href={account.link} target="_blank">{account.name}</a></li>)}
-        </ul>
-        <h2>メールアドレス</h2>
-        <p>dotfiles に .gitconfig を載せているので、そちらをご参照ください</p>
-        <Footer />
-    </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <h2>iokira って誰？</h2>
+    <p>プログラマです。コーヒーが好き。</p>
+    <h2>各種 SNS アカウント</h2>
+    <ul>
+        {accounts.map((account) => <li><a href={account.link} target="_blank">{account.name}</a></li>)}
+    </ul>
+    <h2>メールアドレス</h2>
+    <p>dotfiles に .gitconfig を載せているので、そちらをご参照ください</p>
+</BaseLayout>

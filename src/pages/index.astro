@@ -1,21 +1,7 @@
 ---
-import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
-import '../styles/global.css';
-
-const pageTitle = "iokira - homepage";
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "iokira - home page";
 ---
-<html lang="ja">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} >
-        <title>{pageTitle}</title>
-    </head>
-    <body>
-        <Header />
-        <h1>{pageTitle}</h1>
-        <h2>吉良 伊織 (Kira Iori)</h2>
-        <Footer />
-    </body>
-</html>
+<BaseLayout pageTitle={pageTitle}>
+    <h2>吉良 伊織 (Kira Iori)</h2>
+</BaseLayout>
