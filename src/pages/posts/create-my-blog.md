@@ -1,13 +1,11 @@
 ---
+layout: ../../layouts/MarkdownPostLayout.astro
 title: 'Astro でブログを構築する'
-pubDate: 2025/04/12
-description: 'Astro を使って快適に開発と運用ができるブログを構築し、現行の Next.js によって構築しているページを置き換える。'
+publishDate: 2025/04/12
+description: 'Astro を使って快適に開発と運用ができるブログを構築する。'
 author: 'iokira'
-tags: ["astro", "diary"]
+tags: ['astro', 'diary']
 ---
-# Astro でブログを構築する
-
-投稿日: 2025/04/12
 
 iokira です、はじめまして。
 
