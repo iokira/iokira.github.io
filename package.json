@@ -3,7 +3,8 @@
         "dev": "astro dev --host",
         "start": "astro start",
         "build": "astro build",
-        "preview": "astro preview"
+        "preview": "astro preview",
+        "prepare": "husky"
     },
     "volta": {
         "node": "20.16.0",
