@@ -1,18 +1,20 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import BlogPostItem from '../../components/BlogPostItem.astro';
-import BreadCrumbs from '../../components/BreadCrumbs.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import BlogPostItem from '@components/BlogPostItem.astro';
+import BreadCrumbs from '@components/BreadCrumbs.astro';
 
 export async function getStaticPaths() {
 const allPosts = await Astro.glob('../posts/*.md');
+
 const uniqueTags = [...new Set(allPosts.flatMap((post) => post.frontmatter.tags))];
+
 return uniqueTags.map((tag) => {
-const filteredPosts = allPosts.filter((post) => post.frontmatter.tags?.includes(tag));
+const filteredPosts = allPosts.filter((post) => post.frontmatter.tags.includes(tag));
 return {
 params: { tag },
 props: { posts: filteredPosts },
-}
-})
+};
+});
 }
 
 const { tag } = Astro.params;
@@ -23,7 +25,7 @@ const { posts } = Astro.props;
     <h1>{tag}のタグが付いた記事</h1>
     <ul>
         {posts.map((post) =>
-        <BlogPostItem title={post.frontmatter.title} url={post.url} />
+        <BlogPostItem post={post} />
         )}
     </ul>
 </BaseLayout>

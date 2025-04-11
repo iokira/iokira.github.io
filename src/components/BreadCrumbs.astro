@@ -4,8 +4,7 @@ const { crumbs, topic } = Astro.props;
 <nav class="crumbs">
     <ol>
         {crumbs.map((crumb) =>
-        <li class="crumb"><a href={crumb.url}>{crumb.title}</a></li>
-        )}
+        <li class="crumb"><a href={crumb.url}>{crumb.title}</a></li>)}
         <li class="crumb">{topic}</li>
     </ol>
 </nav>

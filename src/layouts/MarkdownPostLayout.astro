@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import BreadCrumbs from '../components/BreadCrumbs.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import BreadCrumbs from '@components/BreadCrumbs.astro';
 const { frontmatter } = Astro.props;
 const publishDateString = new Date(frontmatter.publishDate).toLocaleDateString();
 const updateDateString = frontmatter.updateDate ? new Date(frontmatter.updateDate).toLocaleDateString() : undefined;
