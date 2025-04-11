@@ -1,4 +1,6 @@
 ---
+import Navigation from '../components/Navigation.astro';
+import Footer from '../components/Footer.astro';
 import '../styles/global.css';
 
 const pageTitle = "僕について";
@@ -16,9 +18,7 @@ const accounts = [
         <title>{pageTitle}</title>
     </head>
     <body>
-        <a href="/">iokira.net</a>
-        <a href="/about">僕について</a>
-        <a href="/blog">ブログ</a>
+        <Navigation />
         <h1>{pageTitle}</h1>
         <h2>iokira って誰？<h2>
         <p>プログラマです。コーヒーが好き。</p>
@@ -28,5 +28,6 @@ const accounts = [
         </ul>
         <h2>メールアドレス</h2>
         <p>dotfiles に .gitconfig を載せているので、そちらをご参照ください</p>
+        <Footer />
     </body>
 </html>
