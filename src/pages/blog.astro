@@ -11,7 +11,7 @@ const pageTitle = "ブログ";
     <h2>記事一覧</h2>
     <ul>
         {allPosts.map((post) => <li>
-            <BlogPostItem title={post.frontmatter.title} url={post.url} />
+            <BlogPostItem post={post} />
         </li>)}
     </ul>
 </BaseLayout>
