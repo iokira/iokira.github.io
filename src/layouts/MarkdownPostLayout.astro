@@ -5,6 +5,12 @@ const publishDateString = new Date(frontmatter.publishDate).toLocaleDateString()
 const updateDateString = frontmatter.updateDate ? new Date(frontmatter.updateDate).toLocaleDateString() : undefined;
 ---
 <BaseLayout pageTitle={frontmatter.title}>
+    <nav class="crumbs">
+        <ol>
+            <li class="crumb"><a href="/blog">ブログ</a></li>
+            <li class="crumb">{frontmatter.title}</li>
+        </ol>
+    </nav>
     <h1>{frontmatter.title}</h1>
     <p>著者: {frontmatter.author}</p>
     <p>投稿日: {publishDateString}</p>
@@ -12,3 +18,23 @@ const updateDateString = frontmatter.updateDate ? new Date(frontmatter.updateDat
     <p><em>{frontmatter.description}</em></p>
     <slot />
 </BaseLayout>
+<style>
+    .crumbs {
+        border-bottom: 1px solid black;
+    }
+
+    .crumbs ol {
+        list-style-type: none;
+        padding-inline-start: 0;
+    }
+
+    .crumb {
+        display: inline-block;
+    }
+
+    .crumb a::after {
+        display: inline-block;
+        content: ">";
+        padding: 0 0.3rem;
+    }
+</style>
