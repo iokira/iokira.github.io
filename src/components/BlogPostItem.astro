@@ -1,11 +1,13 @@
 ---
 const { post } = Astro.props;
+
+type Tag = string;
 ---
 
 <a href={post.url}>{post.frontmatter.title}</a>
 <ol class="blogPostItemTags">
     {
-        post.frontmatter.tags.map((tag) => (
+        post.frontmatter.tags.map((tag: Tag) => (
             <li class="blogPostItemTag">
                 <a href={`/tags/${tag}`}>{tag}</a>
             </li>
