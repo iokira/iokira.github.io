@@ -1,11 +1,23 @@
 ---
+import type { MarkdownInstance } from "astro";
+
+type Props = {
+    post: MarkdownInstance<Record<string, any>>;
+};
 const { post } = Astro.props;
+
+type Tag = string;
 ---
+
 <a href={post.url}>{post.frontmatter.title}</a>
 <ol class="blogPostItemTags">
-    {post.frontmatter.tags.map((tag) => <li class="blogPostItemTag">
-        <a href={`/tags/${tag}`}>{tag}</a>
-    </li>)}
+    {
+        post.frontmatter.tags.map((tag: Tag) => (
+            <li class="blogPostItemTag">
+                <a href={`/tags/${tag}`}>{tag}</a>
+            </li>
+        ))
+    }
 </ol>
 <style>
     .blogPostItemTags {

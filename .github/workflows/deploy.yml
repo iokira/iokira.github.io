@@ -20,7 +20,6 @@ jobs:
               with:
                   path: .
                   node-version: 20
-                  package-manager: yarn@4.4.0
 
     deploy:
         needs: build
