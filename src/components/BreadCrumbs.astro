@@ -1,5 +1,13 @@
 ---
-const { crumbs, topic } = Astro.props;
+type Crumb = {
+    url: string;
+    title: string;
+};
+type Props = {
+    crumbs: Crumb[];
+    topic: string;
+};
+const { crumbs, topic }: Props = Astro.props;
 ---
 
 <nav class="crumbs">
