@@ -1,14 +1,24 @@
 ---
-import BaseLayout from '@layouts/BaseLayout.astro';
-import BreadCrumbs from '@components/BreadCrumbs.astro';
-const allPosts = await Astro.glob('../posts/*.md');
+import BaseLayout from "@layouts/BaseLayout.astro";
+import BreadCrumbs from "@components/BreadCrumbs.astro";
+const allPosts = await Astro.glob("../posts/*.md");
 const tags = [...new Set(allPosts.flatMap((post) => post.frontmatter.tags))];
 const pageTitle = "タグ一覧";
 ---
+
 <BaseLayout pageTitle={pageTitle}>
-    <BreadCrumbs crumbs={[{url: "/blog", title: "ブログ"}]} topic={pageTitle} />
+    <BreadCrumbs
+        crumbs={[{ url: "/blog", title: "ブログ" }]}
+        topic={pageTitle}
+    />
     <h1>{pageTitle}</h1>
     <ul>
-        {tags.map((tag) => <li><a href={`/tags/${tag}`}>{tag}</a></li>)}
+        {
+            tags.map((tag) => (
+                <li>
+                    <a href={`/tags/${tag}`}>{tag}</a>
+                </li>
+            ))
+        }
     </ul>
 </BaseLayout>
