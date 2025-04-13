@@ -1,4 +1,9 @@
 ---
+import type { MarkdownInstance } from "astro";
+
+type Props = {
+    post: MarkdownInstance<Record<string, any>>;
+};
 const { post } = Astro.props;
 
 type Tag = string;
