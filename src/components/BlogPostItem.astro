@@ -5,36 +5,14 @@ type Props = {
     post: MarkdownInstance<Record<string, any>>;
 };
 const { post } = Astro.props;
-
-type Tag = string;
 ---
 
 <h3 class="blogTitle"><a href={post.url}>{post.frontmatter.title}</a></h3>
 <p class="blogDescription">{post.frontmatter.description}</p>
-<ol class="blogPostItemTags">
-    {
-        post.frontmatter.tags.map((tag: Tag) => (
-            <li class="blogPostItemTag">
-                <a href={`/tags/${tag}`}>{tag}</a>
-            </li>
-        ))
-    }
-</ol>
 <style lang="scss">
     .blogTitle {
         a {
             color: inherit;
-        }
-    }
-    .blogPostItemTags {
-        list-style: none;
-        padding-inline-start: 0;
-        display: flex;
-        gap: 0.5rem;
-        .blogPostItemTag {
-            a {
-                color: inherit;
-            }
         }
     }
 </style>
