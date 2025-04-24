@@ -10,11 +10,17 @@ const pageTitle = "ブログ";
     <h2>美味しかったコーヒーや面白かった本、勉強したことについて書く日記。</h2>
     <ol class="blogPostItems">
         {
-            allPosts.map((post) => (
-                <li>
-                    <BlogPostItem post={post} />
-                </li>
-            ))
+            allPosts
+                .sort(
+                    (a, b) =>
+                        new Date(b.frontmatter.publishDate).getTime() -
+                        new Date(a.frontmatter.publishDate).getTime(),
+                )
+                .map((post) => (
+                    <li>
+                        <BlogPostItem post={post} />
+                    </li>
+                ))
         }
     </ol>
 </BaseLayout>

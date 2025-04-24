@@ -7,12 +7,5 @@ type Props = {
 const { post } = Astro.props;
 ---
 
-<h3 class="blogTitle"><a href={post.url}>{post.frontmatter.title}</a></h3>
-<p class="blogDescription">{post.frontmatter.description}</p>
-<style lang="scss">
-    .blogTitle {
-        a {
-            color: inherit;
-        }
-    }
-</style>
+<h3><a href={post.url}>{post.frontmatter.title}</a></h3>
+<p>{post.frontmatter.description}</p>

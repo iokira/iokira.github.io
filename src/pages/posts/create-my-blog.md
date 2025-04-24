@@ -2,6 +2,7 @@
 layout: ../../layouts/MarkdownPostLayout.astro
 title: "Astro でブログを構築する"
 publishDate: 2025/04/12
+updateDate: 2025/04/25
 description: "Astro を使って快適に開発と運用ができるブログを構築する。"
 ---
 

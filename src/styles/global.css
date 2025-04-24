@@ -11,6 +11,10 @@ body {
     color: black;
 }
 
+a {
+    color: inherit;
+}
+
 * {
     box-sizing: border-box;
 }
