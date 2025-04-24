@@ -3,8 +3,6 @@ layout: ../../layouts/MarkdownPostLayout.astro
 title: "Astro でブログを構築する"
 publishDate: 2025/04/12
 description: "Astro を使って快適に開発と運用ができるブログを構築する。"
-author: "iokira"
-tags: ["astro", "diary"]
 ---
 
 iokira です、はじめまして。

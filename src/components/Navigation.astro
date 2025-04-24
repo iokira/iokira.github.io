@@ -3,24 +3,20 @@
     <a href="/about">about</a>
     <a href="/blog">blog</a>
 </nav>
-<style>
+<style lang="scss">
     .nav-links {
         width: 100%;
         display: flex;
+        padding-block: 0.5rem;
         gap: 1rem;
-        flex-direction: row;
-    }
 
-    .nav-links a {
-        display: block;
-        text-decoration: none;
-        color: black;
-        font-size: 1.2rem;
-    }
+        a {
+            color: inherit;
+            text-decoration: none;
 
-    @media (max-width: 600px) {
-        .nav-links {
-            gap: 0.5rem;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 </style>
