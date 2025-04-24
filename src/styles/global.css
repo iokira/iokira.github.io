@@ -3,9 +3,9 @@ html {
 }
 
 body {
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
     width: 100%;
-    padding: 1rem;
     line-height: 1.5;
     background-color: white;
     color: black;
