@@ -11,8 +11,8 @@ const pageTitle = "ブログ";
         美味しかったコーヒーや、面白かった本、勉強したことについて書く日記。
     </h2>
     <p><a href="/tags">タグ一覧</a></p>
-    <h2>記事一覧</h2>
-    <ul>
+    <h2>記事</h2>
+    <ol class="blogPostItems">
         {
             allPosts.map((post) => (
                 <li>
@@ -20,5 +20,11 @@ const pageTitle = "ブログ";
                 </li>
             ))
         }
-    </ul>
+    </ol>
 </BaseLayout>
+<style lang="scss">
+    .blogPostItems {
+        list-style: none;
+        padding-inline-start: 0;
+    }
+</style>

@@ -9,7 +9,8 @@ const { post } = Astro.props;
 type Tag = string;
 ---
 
-<a href={post.url}>{post.frontmatter.title}</a>
+<h3 class="blogTitle"><a href={post.url}>{post.frontmatter.title}</a></h3>
+<p class="blogDescription">{post.frontmatter.description}</p>
 <ol class="blogPostItemTags">
     {
         post.frontmatter.tags.map((tag: Tag) => (
@@ -20,21 +21,20 @@ type Tag = string;
     }
 </ol>
 <style lang="scss">
-    .blogPostItemTags {
-        list-style-type: none;
-        padding-inline-start: 0;
-    }
-
-    .blogPostItemTag {
-        display: inline-block;
-
-        &::after {
-            display: inline-block;
-            content: ",";
+    .blogTitle {
+        a {
+            color: inherit;
         }
-
-        &:last-child::after {
-            display: none;
+    }
+    .blogPostItemTags {
+        list-style: none;
+        padding-inline-start: 0;
+        display: flex;
+        gap: 0.5rem;
+        .blogPostItemTag {
+            a {
+                color: inherit;
+            }
         }
     }
 </style>
