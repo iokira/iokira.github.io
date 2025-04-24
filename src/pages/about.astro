@@ -16,7 +16,7 @@ const accounts = [
     <ul>
         {
             accounts.map((account) => (
-                <li class="account">
+                <li>
                     <a
                         href={account.link}
                         target="_blank"
@@ -30,10 +30,3 @@ const accounts = [
     <h2>メールアドレス</h2>
     <p>dotfiles に .gitconfig を載せているので、そちらをご参照ください</p>
 </BaseLayout>
-<style lang="scss">
-    .account {
-        a {
-            color: inherit;
-        }
-    }
-</style>
