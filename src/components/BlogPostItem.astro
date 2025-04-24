@@ -19,7 +19,7 @@ type Tag = string;
         ))
     }
 </ol>
-<style>
+<style lang="scss">
     .blogPostItemTags {
         list-style-type: none;
         padding-inline-start: 0;
@@ -27,14 +27,14 @@ type Tag = string;
 
     .blogPostItemTag {
         display: inline-block;
-    }
 
-    .blogPostItemTag::after {
-        display: inline-block;
-        content: ",";
-    }
+        &::after {
+            display: inline-block;
+            content: ",";
+        }
 
-    .blogPostItemTag:last-child::after {
-        display: none;
+        &:last-child::after {
+            display: none;
+        }
     }
 </style>
