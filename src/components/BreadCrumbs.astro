@@ -20,7 +20,7 @@ const { crumbs, topic }: Props = Astro.props;
         <li class="crumb">{topic}</li>
     </ol>
 </nav>
-<style>
+<style lang="scss">
     .crumbs ol {
         list-style-type: none;
         padding-inline-start: 0;
@@ -28,11 +28,15 @@ const { crumbs, topic }: Props = Astro.props;
 
     .crumb {
         display: inline-block;
-    }
 
-    .crumb a::after {
-        display: inline-block;
-        content: ">";
-        padding: 0 0.3rem;
+        a {
+            color: inherit;
+
+            &::after {
+                display: inline-block;
+                content: ">";
+                padding: 0 0.3rem;
+            }
+        }
     }
 </style>
