@@ -7,7 +7,7 @@ const publishDateString = new Date(
 ).toLocaleDateString();
 const updateDateString = frontmatter.updateDate
     ? new Date(frontmatter.updateDate).toLocaleDateString()
-    : undefined;
+    : null;
 ---
 
 <BaseLayout pageTitle={frontmatter.title}>
@@ -15,8 +15,15 @@ const updateDateString = frontmatter.updateDate
         crumbs={[{ url: "/blog", title: "ブログ" }]}
         topic={frontmatter.title}
     />
+    <p class="publishDate">&#x2191;{publishDateString}</p>
+    {updateDateString && <p class="publishDate">&#x21BB;{updateDateString}</p>}
     <h1>{frontmatter.title}</h1>
-    <p>投稿日: {publishDateString}</p>
-    {updateDateString && <p>更新日: {updateDateString}</p>}
     <slot />
 </BaseLayout>
+<style>
+    .publishDate {
+        height: 1rem;
+        margin: 0;
+        display: inline-block;
+    }
+</style>
