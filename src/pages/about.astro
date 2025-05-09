@@ -6,12 +6,42 @@ const accounts = [
     { link: "https://github.com/iokira", name: "GitHub" },
     { link: "https://x.com/iokira_jp", name: "X (Twitter)" },
 ];
+// 趣味
+const hobbies = ["コーヒー", "読書"];
+const qualifications = [
+    { name: "普通自動車第一種運転免許" },
+    { name: "AWS Certified Cloud Practitioner" },
+    { name: "AWS Solutions Architect - Associate" },
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
     <h1>{pageTitle}</h1>
     <h2>iokira って誰？</h2>
     <p>プログラマです。コーヒーが好き。</p>
+    <h2>趣味</h2>
+    <ul>
+        {hobbies.map((hobby) => <li>{hobby}</li>)}
+    </ul>
+    他にも音楽が好きで、最近はメタルにハマってます。
+    <h2>コーヒー</h2>
+    <p>
+        最近はエチオピアの深煎りが気に入ってる。他にもスマトラとかゲイシャ種も好き。普段は家でペーパードリップだけど、あまり上手には淹れられない。
+    </p>
+    <h2>本</h2>
+    <p>
+        特にミステリと SF
+        が読んでいて楽しいと感じますが、特にジャンルは気にせず読んでいます。
+    </p>
+    <p>特にお気に入りで大好きな本は下記のふたつ。</p>
+    <ul>
+        <li>夢野久作. ドグラ・マグラ</li>
+        <li>京極夏彦. 姑獲鳥の夏</li>
+    </ul>
+    <h2>資格</h2>
+    <ul>
+        {qualifications.map((qualification) => <li>{qualification.name}</li>)}
+    </ul>
     <h2>各種 SNS アカウント</h2>
     <ul>
         {
@@ -28,5 +58,5 @@ const accounts = [
         }
     </ul>
     <h2>メールアドレス</h2>
-    <p>dotfiles に .gitconfig を載せているので、そちらをご参照ください</p>
+    <p>dotfiles に .gitconfig を載せているので、そちらをご参照ください。</p>
 </BaseLayout>
