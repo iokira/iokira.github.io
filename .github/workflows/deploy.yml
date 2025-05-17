@@ -28,5 +28,5 @@ jobs:
                 aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                 aws-region: ap-northeast-1
             - name: Deploy to S3
-              working-derectory: dist
+              working-directory: dist
               run: aws s3 sync . s3://iokira-net --delete --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
