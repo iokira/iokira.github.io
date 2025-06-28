@@ -121,8 +121,13 @@ export class SiteStack extends cdk.Stack {
                     "s3:GetObject",
                     "s3:ListBucket",
                     "s3:DeleteObject",
+                    "ssm:GetParameters",
                 ],
-                resources: [bucket.bucketArn, bucket.bucketArn + "/*"],
+                resources: [
+                    bucket.bucketArn,
+                    bucket.bucketArn + "/*",
+                    `arn:aws:ssm:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:parameter/cdk-bootstrap/hnb659fds/version`,
+                ],
             }),
         );
 
