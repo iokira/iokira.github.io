@@ -10,7 +10,6 @@ import * as iam from "aws-cdk-lib/aws-iam";
 interface StackProps extends cdk.StackProps {
     domainName: string;
     hostedZoneId: string;
-    certificateArn?: string;
 }
 
 export class SiteStack extends cdk.Stack {
