@@ -141,5 +141,13 @@ export class SiteStack extends cdk.Stack {
             value: `https://${props.domainName}`,
             description: "The URL of the deployed site.",
         });
+
+        new cdk.aws_s3_deployment.BucketDeployment(this, "DeploySite", {
+            sources: [cdk.aws_s3_deployment.Source.asset("../../dist")],
+            distribution: distribution,
+            distributionPaths: ["/*"],
+            prune: true,
+            destinationBucket: bucket,
+        });
     }
 }
