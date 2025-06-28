@@ -116,18 +116,32 @@ export class SiteStack extends cdk.Stack {
 
         githubActionsRole.addToPolicy(
             new iam.PolicyStatement({
+                actions: ["sts:AssumeRole"],
+                resources: [
+                    `arn:aws:iam::${cdk.Aws.ACCOUNT_ID}:role/cdk-hnb659fds-cfn-exec-role-${cdk.Aws.ACCOUNT_ID}-${cdk.Aws.REGION}`,
+                    `arn:aws:iam::${cdk.Aws.ACCOUNT_ID}:role/cdk-hnb659fds-deploy-role-${cdk.Aws.ACCOUNT_ID}-${cdk.Aws.REGION}`,
+                ],
+            }),
+        );
+
+        githubActionsRole.addToPolicy(
+            new iam.PolicyStatement({
+                actions: ["ssm:GetParameter"],
+                resources: [
+                    `arn:aws:ssm:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:parameter/cdk-bootstrap/hnb659fds/*`,
+                ],
+            }),
+        );
+
+        githubActionsRole.addToPolicy(
+            new iam.PolicyStatement({
                 actions: [
                     "s3:PutObject",
                     "s3:GetObject",
                     "s3:ListBucket",
                     "s3:DeleteObject",
-                    "ssm:GetParameters",
                 ],
-                resources: [
-                    bucket.bucketArn,
-                    bucket.bucketArn + "/*",
-                    `arn:aws:ssm:${cdk.Aws.REGION}:${cdk.Aws.ACCOUNT_ID}:parameter/cdk-bootstrap/hnb659fds/version`,
-                ],
+                resources: [bucket.bucketArn, bucket.bucketArn + "/*"],
             }),
         );
 
