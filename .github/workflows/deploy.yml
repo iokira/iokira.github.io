@@ -11,6 +11,8 @@ permissions:
 
 env:
   NODE_VERSION: '20'
+  DOMAIN_NAME: ${{ secrets.DOMAIN_NAME }}
+  HOSTED_ZONE_ID: ${{ secrets.HOSTED_ZONE_ID }}
 
 jobs:
     build-and-deploy:
