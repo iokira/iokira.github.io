@@ -6,6 +6,7 @@ import * as origins from "aws-cdk-lib/aws-cloudfront-origins";
 import * as route53 from "aws-cdk-lib/aws-route53";
 import * as targets from "aws-cdk-lib/aws-route53-targets";
 import * as iam from "aws-cdk-lib/aws-iam";
+import path from "path";
 
 interface StackProps extends cdk.StackProps {
     domainName: string;
@@ -143,7 +144,11 @@ export class SiteStack extends cdk.Stack {
         });
 
         new cdk.aws_s3_deployment.BucketDeployment(this, "DeploySite", {
-            sources: [cdk.aws_s3_deployment.Source.asset("../../dist")],
+            sources: [
+                cdk.aws_s3_deployment.Source.asset(
+                    path.join(__dirname, "../../dist"),
+                ),
+            ],
             distribution: distribution,
             distributionPaths: ["/*"],
             prune: true,
