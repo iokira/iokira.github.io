@@ -33,9 +33,5 @@ export class SiteStack extends cdk.Stack {
             distribution: distribution,
             distributionPaths: ["/*"],
         });
-
-        new cdk.CfnOutput(this, "Hosting URL", {
-            value: "https://" + distribution.distributionDomainName,
-        });
     }
 }
