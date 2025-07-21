@@ -6,6 +6,8 @@ export class SiteStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
+        const domainName = "iokira.net";
+
         const siteBucket = new cdk.aws_s3.Bucket(this, "SiteBucket", {
             bucketName: "iokira-net",
             removalPolicy: cdk.RemovalPolicy.DESTROY,
@@ -64,6 +66,7 @@ export class SiteStack extends cdk.Stack {
                         ttl: cdk.Duration.minutes(1),
                     },
                 ],
+                domainNames: [domainName],
             },
         );
 
@@ -76,6 +79,18 @@ export class SiteStack extends cdk.Stack {
             destinationBucket: siteBucket,
             distribution: distribution,
             distributionPaths: ["/*"],
+        });
+
+        const zone = cdk.aws_route53.HostedZone.fromLookup(this, "HostedZone", {
+            domainName: "iokira.net",
+        });
+
+        new cdk.aws_route53.ARecord(this, "SiteAliasRecord", {
+            zone: zone,
+            target: cdk.aws_route53.RecordTarget.fromAlias(
+                new cdk.aws_route53_targets.CloudFrontTarget(distribution),
+            ),
+            recordName: domainName,
         });
     }
 }
