@@ -1,5 +1,6 @@
 import * as cdk from "aws-cdk-lib";
 import { Construct } from "constructs";
+import path from "path";
 
 export class SiteStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
@@ -9,6 +10,8 @@ export class SiteStack extends cdk.Stack {
             bucketName: "iokira-net",
             removalPolicy: cdk.RemovalPolicy.DESTROY,
             autoDeleteObjects: true,
+            blockPublicAccess: cdk.aws_s3.BlockPublicAccess.BLOCK_ALL,
+            enforceSSL: true,
         });
 
         const distribution = new cdk.aws_cloudfront.Distribution(
@@ -28,7 +31,11 @@ export class SiteStack extends cdk.Stack {
         );
 
         new cdk.aws_s3_deployment.BucketDeployment(this, "DeploySite", {
-            sources: [cdk.aws_s3_deployment.Source.asset("../../dist")],
+            sources: [
+                cdk.aws_s3_deployment.Source.asset(
+                    path.join(__dirname, "../../dist"),
+                ),
+            ],
             destinationBucket: siteBucket,
             distribution: distribution,
             distributionPaths: ["/*"],
