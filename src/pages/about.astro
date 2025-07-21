@@ -12,6 +12,11 @@ const qualifications = [
     { name: "AWS Solutions Architect - Associate" },
     { name: "3級ファイナンシャル・プランニング技能士" },
 ];
+const bio = [
+    { year: 2004, event: "福岡県に生まれる" },
+    { year: 2024, event: "久留米工業高等専門学校制御情報工学科を卒業" },
+    { year: 2024, event: "チームラボ株式会社に入社" },
+];
 ---
 
 <BaseLayout pageTitle={pageTitle}>
@@ -23,18 +28,30 @@ const qualifications = [
         width="200"
         height="200"
     />
-    <h2>コーヒー</h2>
+    <h2>Bio</h2>
+    <div class="bio">
+        {
+            bio.map((item) => (
+                <div class="bio-item">
+                    <b>{item.year}</b>
+                    <span>{item.event}</span>
+                </div>
+            ))
+        }
+    </div>
+    <h2>趣味</h2>
+    <h3>コーヒー</h3>
     <p>
         最近はエチオピアの深煎りが気に入ってます。他にもスマトラとかゲイシャ種も好き。普段は家でペーパードリップだけど、あまり上手には淹れられないです。
         仕事の合間にはグァテマラの深煎りをアイスで飲むことが多いです。苦いアイスコーヒーっていいですよね。
     </p>
-    <h2>本</h2>
+    <h3>本</h3>
     <p>特にミステリと SF が好きです。</p>
     <p>
         特にお気に入りなのは京極夏彦の「姑獲鳥の夏」、夢野久作の「ドグラ・マグラ」、アガサ・クリスティの「ナイルに死す」です。
         他にも青空文庫で公開されている短編を読むのが好きで、宮沢賢治の「ポラーノの広場」や江戸川乱歩の「人間椅子」、夢野久作の「瓶詰め地獄」、坂口安吾の「堕落論」が気に入ってます。
     </p>
-    <h2>曲</h2>
+    <h3>曲</h3>
     <p>
         ジャンル問わず、気に入った曲をヘビロテしています。最近は Slipknot、
         Earth, Wind & Fire、小沢健二をよく聴いています。 邦ロックだと THE BACK
@@ -67,4 +84,15 @@ const qualifications = [
         {qualifications.map((qualification) => <li>{qualification.name}</li>)}
     </ul>
 </BaseLayout>
-<style lang="scss"></style>
+<style lang="scss">
+    .bio {
+        display: flex;
+        flex-direction: column;
+
+        > .bio-item {
+            display: flex;
+            flex-direction: row;
+            gap: 1rem;
+        }
+    }
+</style>
