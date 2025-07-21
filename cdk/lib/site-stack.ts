@@ -14,6 +14,21 @@ export class SiteStack extends cdk.Stack {
             enforceSSL: true,
         });
 
+        const redirectFunction = new cdk.aws_cloudfront.Function(
+            this,
+            "RedirectIndexHtmlFunction",
+            {
+                functionName: "redirect-index-html",
+                code: cdk.aws_cloudfront.FunctionCode.fromFile({
+                    filePath: path.join(
+                        __dirname,
+                        "./functions/cloudfront-function.js",
+                    ),
+                }),
+                runtime: cdk.aws_cloudfront.FunctionRuntime.JS_2_0,
+            },
+        );
+
         const distribution = new cdk.aws_cloudfront.Distribution(
             this,
             "SiteDistribution",
@@ -26,6 +41,14 @@ export class SiteStack extends cdk.Stack {
                     viewerProtocolPolicy:
                         cdk.aws_cloudfront.ViewerProtocolPolicy
                             .REDIRECT_TO_HTTPS,
+                    functionAssociations: [
+                        {
+                            function: redirectFunction,
+                            eventType:
+                                cdk.aws_cloudfront.FunctionEventType
+                                    .VIEWER_REQUEST,
+                        },
+                    ],
                 },
                 errorResponses: [
                     {
