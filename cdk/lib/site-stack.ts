@@ -27,6 +27,20 @@ export class SiteStack extends cdk.Stack {
                         cdk.aws_cloudfront.ViewerProtocolPolicy
                             .REDIRECT_TO_HTTPS,
                 },
+                errorResponses: [
+                    {
+                        httpStatus: 403,
+                        responseHttpStatus: 200,
+                        responsePagePath: "/404.html",
+                        ttl: cdk.Duration.minutes(1),
+                    },
+                    {
+                        httpStatus: 404,
+                        responseHttpStatus: 200,
+                        responsePagePath: "/404.html",
+                        ttl: cdk.Duration.minutes(1),
+                    },
+                ],
             },
         );
 
