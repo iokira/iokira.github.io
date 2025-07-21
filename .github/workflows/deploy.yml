@@ -33,6 +33,17 @@ jobs:
           role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_NAME }}
           aws-region: ${{ env.AWS_REGION }}
 
-      - name: Upload files to S3
+      - name: Install AWS CLI
+        working-directory: cdk
         run: |
-          aws s3 sync --delete ./dist s3://${{ secrets.S3_BUCKET_NAME }}/
+          npm ci
+
+      - name: CDK Diff
+        working-directory: cdk
+        run: |
+          npx aws-cdk diff
+
+      - name: CDK Deploy
+        working-directory: cdk
+        run: |
+          npx aws-cdk deploy
