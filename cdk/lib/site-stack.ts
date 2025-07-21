@@ -5,11 +5,11 @@ export class SiteStack extends cdk.Stack {
     constructor(scope: Construct, id: string, props?: cdk.StackProps) {
         super(scope, id, props);
 
-        const siteBucket = cdk.aws_s3.Bucket.fromBucketName(
-            this,
-            "SiteBucket",
-            "iokira-net",
-        );
+        const siteBucket = new cdk.aws_s3.Bucket(this, "SiteBucket", {
+            bucketName: "iokira-net",
+            removalPolicy: cdk.RemovalPolicy.DESTROY,
+            autoDeleteObjects: true,
+        });
 
         const distribution = new cdk.aws_cloudfront.Distribution(
             this,
@@ -28,7 +28,7 @@ export class SiteStack extends cdk.Stack {
         );
 
         new cdk.aws_s3_deployment.BucketDeployment(this, "DeploySite", {
-            sources: [],
+            sources: [cdk.aws_s3_deployment.Source.asset("../../dist")],
             destinationBucket: siteBucket,
             distribution: distribution,
             distributionPaths: ["/*"],
