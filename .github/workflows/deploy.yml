@@ -1,0 +1,38 @@
+name: deploy
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'src/**'
+    workflow_dispatch:
+
+env:
+  NODE_VERSION: '20'
+  AWS_REGION: 'ap-northeast-1'
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install and build
+        uses: withastro/action@v3
+        with:
+          path: .
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          role-to-assume: arn:aws:iam::${{ secrets.AWS_ACCOUNT_ID }}:role/${{ secrets.AWS_ROLE_NAME }}
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: Upload files to S3
+        run: |
+          aws s3 sync --delete ./dist s3://${{ secrets.S3_BUCKET_NAME }}/
