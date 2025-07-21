@@ -8,6 +8,13 @@ export class SiteStack extends cdk.Stack {
 
         const domainName = "iokira.net";
 
+        const siteCertificate =
+            cdk.aws_certificatemanager.Certificate.fromCertificateArn(
+                this,
+                "SiteCertificate",
+                process.env.SITE_CERTIFICATE_ARN || "",
+            );
+
         const siteBucket = new cdk.aws_s3.Bucket(this, "SiteBucket", {
             bucketName: "iokira-net",
             removalPolicy: cdk.RemovalPolicy.DESTROY,
@@ -67,6 +74,7 @@ export class SiteStack extends cdk.Stack {
                     },
                 ],
                 domainNames: [domainName],
+                certificate: siteCertificate,
             },
         );
 
