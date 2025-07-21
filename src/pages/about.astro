@@ -20,15 +20,22 @@ const bio = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <h1>iokira</h1>
-    <p>カフェインに弱いコーヒー愛飲者。読書も好き。</p>
-    <img
-        src="/images/profile.jpg"
-        alt="iokira's profile picture"
-        width="200"
-        height="200"
-    />
+    <div class="headline">
+        <div class="texts">
+            <h1 class="name">iokira</h1>
+            <p>吉良伊織 (Kira Iori)</p>
+            <p class="comment">カフェインに弱いコーヒー・読書愛好家。</p>
+        </div>
+        <img
+            class="profile-image"
+            src="/images/profile.jpg"
+            alt="iokira's profile picture"
+            width="200"
+            height="200"
+        />
+    </div>
     <h2>Bio</h2>
+    <hr />
     <div class="bio">
         {
             bio.map((item) => (
@@ -39,7 +46,9 @@ const bio = [
             ))
         }
     </div>
+    <br />
     <h2>趣味</h2>
+    <hr />
     <h3>コーヒー</h3>
     <p>
         最近はエチオピアの深煎りが気に入ってます。他にもスマトラとかゲイシャ種も好き。普段は家でペーパードリップだけど、あまり上手には淹れられないです。
@@ -49,19 +58,27 @@ const bio = [
     <p>特にミステリと SF が好きです。</p>
     <p>
         特にお気に入りなのは京極夏彦の「姑獲鳥の夏」、夢野久作の「ドグラ・マグラ」、アガサ・クリスティの「ナイルに死す」です。
+    </p>
+    <p>
         他にも青空文庫で公開されている短編を読むのが好きで、宮沢賢治の「ポラーノの広場」や江戸川乱歩の「人間椅子」、夢野久作の「瓶詰め地獄」、坂口安吾の「堕落論」が気に入ってます。
     </p>
     <h3>曲</h3>
+    <p>ジャンル問わず、気に入った曲をヘビロテしています。</p>
+    <p>最近は Slipknot、 Earth, Wind & Fire、小沢健二をよく聴いています。</p>
     <p>
-        ジャンル問わず、気に入った曲をヘビロテしています。最近は Slipknot、
-        Earth, Wind & Fire、小沢健二をよく聴いています。 邦ロックだと THE BACK
-        HORN、 People In The Box、 ASIAN KUNG-FU GENERATION が好き。 メタルは
-        Metallica、 Slipknot、 Crossfaith、 Periphery、明日の叙景、Earthists
-        をよく聞きます。特に Slipknot、Wherein Lies Continue や Before I
-        Forget、 The Virus of Life、 Skeptic、 Vermilion、 The Devil in I、
+        邦ロックだと THE BACK HORN、 People In The Box、 ASIAN KUNG-FU
+        GENERATION が好き。
+    </p>
+    <p>
+        メタルは Metallica、 Slipknot、 Crossfaith、
+        Periphery、明日の叙景、Earthists をよく聞きます。特に Slipknot、Wherein
+        Lies Continue や Before I Forget、 The Virus of Life、 Skeptic、
+        Vermilion、 The Devil in I、
         Lech、などなど好きな曲を挙げだすときりがないですね。
     </p>
+    <br />
     <h2>その他</h2>
+    <hr />
     <h3>各種 SNS アカウント</h3>
     <ul>
         {
@@ -85,6 +102,16 @@ const bio = [
     </ul>
 </BaseLayout>
 <style lang="scss">
+    .headline {
+        padding-block: 1rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+        }
+    }
     .bio {
         display: flex;
         flex-direction: column;
