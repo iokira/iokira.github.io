@@ -1,14 +1,23 @@
 <nav class="nav-links">
     <a href="/">iokira.net</a>
-    <a href="/about">about</a>
-    <a href="/blog">blog</a>
+    <div class="links">
+        <a href="/about">about</a>
+        <a href="/blog">blog</a>
+    </div>
 </nav>
 <style lang="scss">
     .nav-links {
         width: 100%;
         display: flex;
         padding-block: 0.5rem;
-        gap: 1rem;
+        justify-content: space-between;
+
+        .links {
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: row;
+            gap: 1rem;
+        }
 
         a {
             text-decoration: none;
