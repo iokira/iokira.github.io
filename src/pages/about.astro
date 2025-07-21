@@ -16,9 +16,14 @@ const qualifications = [
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-    <h1>{pageTitle}</h1>
-    <h2>iokira って誰？</h2>
+    <h1>iokira</h1>
     <p>プログラマです。コーヒーが好き。</p>
+    <img
+        src="/images/profile.jpg"
+        alt="iokira's profile picture"
+        width="200"
+        height="200"
+    />
     <h2>趣味</h2>
     <ul>
         {hobbies.map((hobby) => <li>{hobby}</li>)}
@@ -60,3 +65,4 @@ const qualifications = [
     <h2>メールアドレス</h2>
     <p>dotfiles に .gitconfig を載せているので、そちらをご参照ください。</p>
 </BaseLayout>
+<style lang="scss"></style>
