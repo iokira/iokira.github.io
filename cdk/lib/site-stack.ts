@@ -31,7 +31,7 @@ export class SiteStack extends cdk.Stack {
                 code: cdk.aws_cloudfront.FunctionCode.fromFile({
                     filePath: path.join(
                         __dirname,
-                        "./functions/cloudfront-function.js",
+                        "functions/cloudfront-function.js",
                     ),
                 }),
                 runtime: cdk.aws_cloudfront.FunctionRuntime.JS_2_0,
