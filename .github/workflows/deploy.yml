@@ -46,4 +46,4 @@ jobs:
       - name: CDK Deploy
         working-directory: cdk
         run: |
-          npx aws-cdk deploy
+          npx aws-cdk deploy --require-approval never
