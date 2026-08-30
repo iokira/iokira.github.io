@@ -79,10 +79,16 @@ const structuredData = {
     ogType="profile"
     structuredData={structuredData}
 >
-    <div class="headline">
+    <div class="headline h-card">
         <div class="texts">
             <div class="identity">
-                <h1 class="name">iokira</h1>
+                <h1 class="name">
+                    <a
+                        class="p-name u-url"
+                        href="/"
+                        >iokira</a
+                    >
+                </h1>
                 <p class="real-name">吉良伊織 (Kira Iori)</p>
                 <div class="sns-links">
                     {
@@ -110,7 +116,7 @@ const structuredData = {
                     }
                     <a
                         href={`mailto:${email}`}
-                        class="sns-link"
+                        class="sns-link u-email"
                         aria-label={`メール: ${email}`}
                     >
                         <svg
@@ -127,10 +133,10 @@ const structuredData = {
                     </a>
                 </div>
             </div>
-            <p class="comment">コーヒー・読書愛好家</p>
+            <p class="comment p-note">コーヒー・読書愛好家</p>
         </div>
         <Image
-            class="profile-image"
+            class="profile-image u-photo"
             src={profileImage}
             alt="プロフィール画像: 焙煎されたコーヒー豆"
             width={240}
@@ -178,6 +184,11 @@ const structuredData = {
         font-size: clamp(1.75rem, 5vw, 2.5rem);
         margin: 0;
         letter-spacing: -0.02em;
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
     }
 
     .real-name {
